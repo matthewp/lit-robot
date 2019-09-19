@@ -1,6 +1,6 @@
 # lit-robot
 
-[LitElement](https://lit-element.polymer-project.org/) hooks for use with [Robot](https://thisrobot.life/).
+[LitElement](https://lit-element.polymer-project.org/) integration with [Robot](https://thisrobot.life/).
 
 See documentation on [the website](https://thisrobot.life/integrations/lit-robot.html).
 
