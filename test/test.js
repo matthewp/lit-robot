@@ -43,4 +43,35 @@ QUnit.module('useMachine', hooks => {
     assert.equal(text(), 'State: two');
     el.remove();
   });
+
+  QUnit.test('Context gets the element', async assert => {
+    const machine = createMachine({
+      one: state()
+    }, ev => ({
+      el: ev.element
+    }));
+
+    class MyApp extends Robot(LitElement) {
+      static machine = machine;
+
+      render() {
+        let context = this.service.context;
+        let tagName = context.el.tagName;
+
+        return html`
+          <div>Element: ${tagName}</div>
+        `;
+      }
+    }
+
+    customElements.define('my-app2', MyApp);
+
+    let el = new MyApp();
+    let text = () => el.shadowRoot.firstElementChild.textContent.trim();
+    document.body.append(el);
+    await later();
+
+    assert.equal(text(), 'Element: MY-APP2');
+    el.remove();
+  });
 });

@@ -36,6 +36,6 @@
     "http-server": "^0.11.1",
     "lit-element": "^2.2.1",
     "node-qunit-puppeteer": "^1.0.13",
-    "robot3": "0.2.0"
+    "robot3": "0.2.1"
   }
 }
