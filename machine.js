@@ -13,7 +13,7 @@ function Robot(Base) {
       this.service = interpret(machine, service => {
         this.machine = service.machine;
         this.requestUpdate();
-      });
+      }, { element: this });
       this.machine = this.service.machine;
     }
   }
